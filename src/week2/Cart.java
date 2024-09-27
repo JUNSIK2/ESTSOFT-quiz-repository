@@ -13,8 +13,8 @@ public class Cart {
         int productsPrice = 0;
 
         for (Product product : products) {
-            productsWeight += product.getWeight();
-            productsPrice += product.getPrice() - product.getDiscountAmount();
+            productsWeight = product.getWeight();
+            productsPrice = product.getPrice() - product.getDiscountAmount();
         }
 
         if (productsWeight < 3){
@@ -27,7 +27,7 @@ public class Cart {
 
         if (productsPrice >= 30000 && productsPrice < 100000){
             totalDeliveryCharge -= 1000;
-        } else if (productsPrice <= 100000){
+        } else if (productsPrice >= 100000){
             totalDeliveryCharge = 0;
         }
 
